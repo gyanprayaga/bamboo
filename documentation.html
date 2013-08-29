@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bamboo | Documentation</title>
+	<link rel="icon" href="http://jujubeweb.com/bamboo/favicon.ico">
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon" href="http://jujubeweb.com/bamboo/favicon.ico">
+	<meta name="description" content="Learn how to integrate Bamboo into your website by reading through our comprehensive documentation.">
+	<style>
+			body {
+				color:#2B2B2B;
+				font-family:'Helvetica Neue','Helvetica',arial;
+				font-size:15px;
+				font-weight:300;
+				margin-left:40px;
+				margin-right:40px;
+				line-height:23px;
+				padding-bottom:300px;
+				background:url('http://subtlepatterns.com/patterns/tiny_grid.png') #FAFAFA;
+			}
+			
+			header {
+				font-size:28pt;
+				margin-top:30px;
+			}
+			
+			header a {
+				text-decoration:none;
+				color:#b5b5b5;
+				-webkit-transition:color .3s linear;
+				-moz-transition:color .3s linear;
+				-o-transition:color .3s linear;
+				-ms-transition:color .3s linear;
+				transition:color .3s linear;
+				font-weight:100;
+			}
+			
+			header a:hover  {
+				color:#2d2d2d;
+			}
+			
+			p#overview {
+				font-size:19px;
+				line-height:27px;
+			}
+			
+			h2 {
+				font-weight:400;
+				margin-bottom:0px;
+				padding-bottom:5px;
+			}
+			
+			p {
+				font-size:17px;
+				line-height:23px;
+				margin-top:10px;
+				padding-top:0px;
+				margin-bottom:7px;
+				padding-bottom:0px;
+			}
+			
+			article {
+				margin-left:auto;
+				margin-right:auto;
+				margin-top:20px;
+			}
+			
+			article#first {
+				margin-top:40px;
+			}
+			
+			article a, article a:visited {
+				color:#0084C9;
+				text-decoration:none;
+			}
+			
+			article a:hover, article a:active {
+				color:#0278B5;
+				text-decoration:underline;
+			}
+			
+			b {
+				font-weight:500;
+			}
+			
+			footer {
+				font-size:10pt;
+				position:fixed;
+				bottom:0px;
+				right:20px;
+				opacity:0.6;
+				-webkit-transition:opacity 0.3s linear;
+				font-weight:400;
+			}
+		
+			footer:hover {
+				opacity:1;
+			}
+			
+			::selection {
+				background-color:#4A4A4A;
+				color:white;
+			}
+			
+			img#logo {
+				float:right;
+				height:300px;
+			}
+			
+			code {
+				font-family:'Consolas',arial;
+				background-color:lightGray;
+				font-size:15px;
+				border-radius:2px;
+				padding-left:5px;
+				padding:2px;
+				padding-top:3px;
+				margin-top:0px;
+			}
+			
+			p.afterPre {
+				margin-top:20px;
+			}
+			
+			pre {
+				font-family:'Consolas',arial;
+				background-color:rgba(232,232,232,0.6);
+				font-size:15px;
+				border-radius:3px;
+				padding:10px;
+				width:560px;
+				border:0px solid DarkGray;
+			}
+			
+			a.back-to-top, a.back-to-top:visited {
+				float:right;
+				font-size:13px;
+				color:#2B2B2B;
+				font-weight:300;
+			}
+			
+			h2.notFirst {
+				padding-top:5px;
+			}
+			
+			nav#mainNav {
+				position:fixed;
+				left:0px;
+				bottom:0px;
+				width:100%;
+				background-color:#D1D1D1;
+				border-top:2px solid darkGray;
+				box-shadow:0px 0px 10px 1px darkGray;
+				padding-top:10px;
+				line-height:40px;
+				z-index:120
+			}
+			
+			nav#mainNav h2 {
+				padding-left:17px;
+				font-weight:300;
+				font-size:13px;
+				margin-bottom:0px;
+				padding-bottom:0px;
+				text-transform:uppercase;
+				display:none;
+			}
+			
+			nav#mainNav ul {
+				margin-top:5px;
+				list-style-type: none;
+				padding-left:15px;
+				padding-right:15px;
+			}
+			
+			nav#mainNav ul li {
+				background-color:rgba(86,86,86,0.77);
+				color:white;
+				border-radius:0px;
+				margin-left:7px;
+				padding:5px;
+				/*margin-bottom:7px;*/
+				cursor:pointer;
+				line-height:20px;
+				display:inline-block;
+			}
+			
+			nav#mainNav ul li.more:hover ul {
+				display:block;
+			}
+			
+			nav#mainNav ul li:hover {
+				background-color:#595959;
+			}
+			
+			nav#mainNav ul a, nav#mainNav ul a:active, nav#mainNav ul a:visited, nav#mainNav ul a:hover {
+				color:white;
+				text-decoration:none;
+			}
+			
+			nav#mainNav ul li.subLine {
+				margin-left:5px;
+				background-color:rgba(133,133,133,0.77);
+				font-size:13px;
+			}
+			
+			nav#mainNav ul li#comingsoon, nav#mainNav ul li#comingsoon:hover{
+				background-color:rgba(133,133,133,0.47);
+				cursor:default;
+			}
+			
+			nav#mainNav ul li.subLine:hover {
+				background-color:#8d8d8d;
+			}
+			
+			nav#mainNav ul li.support {
+				margin-left:7px;
+				background-color:rgba(72,144,168,0.77);
+			}
+			
+			nav#mainNav ul li.support:hover {
+				background-color:rgba(69,132,153,0.77);
+			}
+			
+			nav#mainNav ul li.demo {
+				margin-left:7px;
+				background-color:rgba(214,49,49,0.77);
+			}
+			
+			nav#mainNav ul li.demo:hover {
+				background-color:rgba(186,47,47,0.77);
+			}			
+			
+			p.underLine {
+				padding-top:0px;
+				margin-top:0px;
+			}
+			
+			h3.lowHeader {
+				margin-bottom:0px;
+				padding-bottom:7px;
+			}
+			
+			h4 {
+				padding-bottom:0px;
+				margin-bottom:5px;
+			}
+			
+			p.codeHolder {
+				padding-top:0px;
+				margin-top:0px;
+			}
+			
+			p.exHolder {
+				padding-bottom:5px;
+				margin-top:10px;
+			}
+			
+			pre.funky {
+				color:darkGray;
+			}
+			
+			pre span {
+				color:#2B2B2B;
+			}				
+			
+			/* Bamboo */
+			
+			div.big {
+				background-color:lightGray;
+				font-size:32px;
+				padding:20px;
+				font-weight:300;
+				background:url('tomcat.png') no-repeat scroll right top; 
+				height:100px;
+				margin-bottom:0px;
+				padding-bottom:0px;
+				background-image: -webkit-linear-gradient(#F2F2F2, #CCCCCC);
+				border-radius:7px;
+				border:2px solid gray;	
+			}
+			
+			div.big img {
+				height:80px;
+				float:right;
+				padding-left:15px;
+			}
+			
+			div.big b {
+				font-weight:500;
+			}
+			
+			/* Default input (blue glow) */
+			
+			input, input[type="search"] {
+			  border:2px solid darkGray;
+			  border-radius:3px;
+			  color:black;
+			  font-family: 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+			  font-size: 13px;
+			  font-weight:400;
+			  outline:0;
+			  padding:4px;
+			  text-shadow: 0 1px 0 rgba(230, 230, 230, .1);
+			  -webkit-transition:all 0.2s;
+			  /*     box-shadow:0 0 2px .07em lightGray inset;*/
+			  background-color:white;
+			  -webkit-appearance:none;
+			  vertical-align:middle;
+			}
+			
+			::-webkit-input-placeholder {
+			  color:
+			  999;
+			}
+			
+			input:hover, input[type="search"]:hover {
+			  border:2px solid gray;
+			} 
+			
+			input:focus, input[type="search"]:focus {
+			  box-shadow:0px 0px 3px 0.01em #0099CC;
+			  border:2px solid #0099CC;
+			}
+			
+			/* Light blue input */
+			input[lightBlue]:focus, input[type="search"][lightBlue]:focus {  
+			  box-shadow:0px 0px 3px 0.01em #33B5E5;
+			  border:2px solid #33B5E5;
+			}
+			
+			/* Green input */
+			input[green]:focus, input[type="search"][green]:focus {
+			  box-shadow:0px 0px 3px 0.01em #669900;
+			  border:2px solid #669900;
+			}
+			
+			/* Light green input */
+			input[lightGreen]:focus, input[type="search"][lightGreen]:focus {
+			  box-shadow:0px 0px 3px 0.01em #99CC00;
+			  border:2px solid #99CC00;
+			}
+			
+			/* Orange input */
+			input[orange]:focus, input[type="search"][orange]:focus {
+			  box-shadow:0px 0px 3px 0.01em #FF8800;
+			  border:2px solid #FF8800;
+			}
+			
+			/* Light orange input */
+			input[lightOrange]:focus, input[type="search"][lightOrange]:focus {
+			  box-shadow:0px 0px 3px 0.01em #FFBB33;
+			  border:2px solid #FFBB33;
+			}
+			
+			/* Red input */
+			input[red]:focus, input[type="search"][red]:focus {
+			  box-shadow:0px 0px 3px 0.01em #CC0000;
+			  border:2px solid #CC0000;
+			}
+			
+			/* Light red input */
+			input[lightRed]:focus, input[type="search"][lightRed]:focus {
+			  box-shadow:0px 0px 3px 0.01em #FF4444;
+			  border:2px solid #FF4444;
+			}
+			
+			/* Search inputs */
+			
+			input[type="search"] {
+			   	 background: url('http://jujubeweb.com/bamboo/Glyphish/icons/06-magnify.png') no-repeat 4px 5px;	
+				 background-size: 13px 13px;
+				 -webkit-appearance:none;
+				 width: 120px;
+				 -moz-transition: width 0.5s ease-out;
+				 -webkit-transition: width 0.5s ease-out;
+				 transition: width 0.5s ease-out;
+				 padding:2px;
+				 padding-left:10px;
+				 height:28px;
+			}
+			
+			input[type="search"]:focus {
+				width:180px;
+			}
+			
+			/* Default textarea (blue glow) */
+			
+			textarea {
+			  border:2px solid darkGray;
+			  border-radius:3px;
+			  color:black;
+			  font-family: 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+			  font-size: 13px;
+			  font-weight:400;
+			  outline:0;
+			  padding:4px;
+			  text-shadow: 0 1px 0 rgba(230, 230, 230, .1);
+			  -webkit-transition:all 0.2s;
+			  /*     box-shadow:0 0 2px .07em lightGray inset;*/
+			  background-color:white;
+			  resize:none;
+			  margin-top:20px;
+			  margin-right:5px;
+			}
+			
+			::-webkit-input-placeholder {
+			  color:#999;
+			}
+			
+			textarea:hover {
+			  border:2px solid gray;
+			} 
+			
+			textarea:focus {
+			  box-shadow:0px 0px 3px 0.01em #0099CC;
+			  border:2px solid #0099CC;
+			}
+			
+			/* Light blue textarea */
+			textarea[lightBlue]:focus {  
+			  box-shadow:0px 0px 3px 0.01em #33B5E5;
+			  border:2px solid #33B5E5;
+			}
+			
+			/* Green textarea */
+			textarea[green]:focus {
+			  box-shadow:0px 0px 3px 0.01em #669900;
+			  border:2px solid #669900;
+			}
+			
+			/* Light green textarea */
+			textarea[lightGreen]:focus {
+			  box-shadow:0px 0px 3px 0.01em #99CC00;
+			  border:2px solid #99CC00;
+			}
+			
+			/* Orange textarea */
+			textarea[orange]:focus {
+			  box-shadow:0px 0px 3px 0.01em #FF8800;
+			  border:2px solid #FF8800;
+			}
+			
+			/* Light orange tetarea */
+			textarea[lightOrange]:focus {
+			  box-shadow:0px 0px 3px 0.01em #FFBB33;
+			  border:2px solid #FFBB33;
+			}
+			
+			/* Red textarea */
+			textarea[red]:focus {
+			  box-shadow:0px 0px 3px 0.01em #CC0000;
+			  border:2px solid #CC0000;
+			}
+			
+			/* Light red textarea */
+			textarea[lightRed]:focus {
+			  box-shadow:0px 0px 3px 0.01em #FF4444;
+			  border:2px solid #FF4444;
+			}
+			
+			/* Progress bar */
+			
+				.meter { 
+					height: 20px;  /* Can be anything */
+					position: relative;
+					background: #E8E8E8;
+					padding: 0px;
+				        border-radius:4px;
+				        width:200px;
+				}
+				.meter > span {
+					display: block;
+					height: 20px;
+			        	border-bottom-left-radius:4px;
+			        	border-top-left-radius:4px;
+					background-color: rgb(43,194,83);
+					background-image: -webkit-gradient(
+					  linear,
+					  left bottom,
+					  left top,
+					  color-stop(0, #33B5E5),
+					  color-stop(1, #0099CC)
+					 );
+					background-image: -moz-linear-gradient(
+					  center bottom,
+					  rgb(43,194,83) 37%,
+					  rgb(84,240,84) 69%
+					 );
+					-webkit-box-shadow: 
+					  inset 0 2px 9px  rgba(255,255,255,0.3),
+					  inset 0 -2px 6px rgba(0,0,0,0.4);
+					-moz-box-shadow: 
+					  inset 0 2px 9px  rgba(255,255,255,0.3),
+					  inset 0 -2px 6px rgba(0,0,0,0.4);
+					box-shadow: 
+					  inset 0 2px 9px  rgba(255,255,255,0.3),
+					  inset 0 -2px 6px rgba(0,0,0,0.4);
+					position: relative;
+					overflow: hidden;
+				}
+				.meter > span:after, .animate > span > span {
+					content: "";
+					position: absolute;
+					top: 0; left: 0; bottom: 0; right: 0;
+					background-image: 
+					   -webkit-gradient(linear, 0 0, 100% 100%, 
+					      color-stop(.25, rgba(255, 255, 255, .2)), 
+					      color-stop(.25, transparent), color-stop(.5, transparent), 
+					      color-stop(.5, rgba(255, 255, 255, .2)), 
+					      color-stop(.75, rgba(255, 255, 255, .2)), 
+					      color-stop(.75, transparent), to(transparent)
+					   );
+					background-image: 
+						-moz-linear-gradient(
+						  -45deg, 
+					      rgba(255, 255, 255, .2) 25%, 
+					      transparent 25%, 
+					      transparent 50%, 
+					      rgba(255, 255, 255, .2) 50%, 
+					      rgba(255, 255, 255, .2) 75%, 
+					      transparent 75%, 
+					      transparent
+					   );
+					z-index: 1;
+					-webkit-background-size: 50px 50px;
+					-moz-background-size: 50px 50px;
+					-webkit-animation: move 2s linear infinite;
+					overflow: hidden;
+				}
+				
+				.animate > span:after {
+					display: none;
+				}
+				
+				@-webkit-keyframes move {
+				    0% {
+				       background-position: 0 0;
+				    }
+				    100% {
+				       background-position: 50px 50px;
+				    }
+				}
+				
+			
+						
+			/* Blockquote */
+			
+			blockquote {
+			  background:#f9f9f9;
+			  border-left:10px solid #ccc;
+			  margin:1.5em 10px;
+			  padding:.5em 10px;
+			  quotes:"\201C""\201D""\2018""\2019";
+			  font-size:15px;
+			  font-style:italic;
+			  font-family:'Georgia',serif;
+			}
+			
+			blockquote:before {
+			  color:#ccc;
+			  content:open-quote;
+			  font-size:4em;
+			  line-height:.1em;
+			  margin-right:.25em;
+			  vertical-align:-.4em;
+			  font-style:normal
+			}
+			
+			blockquote p {
+			  display:inline;
+			}
+			
+			/* disabled inputs */
+			
+			input[disabled] {
+			  border:2px solid lightGray;  
+			  cursor:not-allowed;
+			}
+			
+			/* Tables */
+			
+			table {
+			  border:2px solid darkGray;
+			  background-color:#F0F0F0;
+			  padding:5px;
+			  border-collapse:collapse;
+			  border-radius:3px;
+			  margin-top:20px;
+			  cursor:default;
+			}
+			
+			tr, th, td {
+			  border:2px solid darkGray;
+			  padding:5px;
+			  cursor:default;
+			}
+			
+			tr.title th {
+			  background-color:#c6c6c6;
+			}
+			
+			tr:nth-child(even) {
+			  background-color:#F7F7F7; 
+			}
+			
+			tr:nth-child(odd) { 
+			  background-color:#E8E8E8; 
+			}
+			
+			/* Hover Tables */
+			
+			table.hover tr:nth-child(even) {
+			  background-color:#F7F7F7; 
+			}
+			
+			table.hover tr:nth-child(odd) { 
+			  background-color:#E8E8E8; 
+			}
+			
+			table.hover tr:nth-child(even):hover {
+			  background-color:#b9b9b9; 
+			}
+			
+			table.hover tr:nth-child(odd):hover { 
+			  background-color:#b9b9b9; 
+			}
+			
+			/* Gradual hover effect */
+			
+			table.hover.gradual {
+			  background-color:#F7F7F7; 
+			  -webkit-transition:background-color 0.1s linear;
+			}
+			
+			table.hover.gradual tr:nth-child(odd) {
+			  -webkit-transition:background-color 0.1s linear;
+			  background-color:#E8E8E8; 
+			}
+			
+			table.hover.gradual tr:nth-child(even):hover {
+			  background-color:#b9b9b9; 
+			}
+			
+			table.hover.gradual tr:nth-child(odd):hover { 
+			  background-color:#b9b9b9; 
+			}
+			
+			/* Buttons and input[type="submit"] */
+			
+			button, input[type="submit"] {
+				background-image: -webkit-linear-gradient(#DEDEDE, lightGray);
+				border:2px solid gray;	
+				border-radius:3px;
+				color:black;
+				font-family: 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+				font-size: 13px;
+				font-weight:400;
+				outline:0;
+				padding:4px;
+				text-shadow: 0 1px 0 rgba(230, 230, 230, 1);
+				-webkit-transition:text-shadow 0.1s linear;
+			}
+			
+			button:hover, input[type="submit"]:hover {
+				background-image: -webkit-linear-gradient(lightGray, darkGray);
+				border:2px solid #656565;
+				text-shadow: 0 1px 0 rgba(240, 240, 240, 1);
+			}
+			
+			button:active, input[type="submit"]:active {
+				background-image: -webkit-linear-gradient(lightGray, darkGray);
+				border:2px solid #585858;
+				box-shadow:inset 1px 1px 5px 3px #b0b0b0;
+			}
+			
+			/* Dropdowns */
+			
+			select {
+			  border:2px solid darkGray;
+			  border-radius:3px;
+			  color:black;
+			  font-family: 'Helvetica Neue', 'Helvetica', arial, sans-serif;
+			  font-size: 13px;
+			  font-weight:400;
+			  outline:0;
+			  padding:4px;
+			  text-shadow: 0 1px 0 rgba(230, 230, 230, .1);
+			  -webkit-transition:all 0.2s;
+			  /*     box-shadow:0 0 2px .07em lightGray inset;*/
+			  background-color:white;
+			  -webkit-appearance:none;
+			  background: url('http://jujubeweb.com/bamboo/glyphicons/glyphicons/png/glyphicons_027_search.png') no-repeat right #ddd;
+			  min-width:100px;
+			}
+			
+			select:hover {
+			  border:2px solid gray;
+			} 
+						
+			/* Divs with columns */
+			
+			div[columns] {
+				margin-top:20px;
+				-moz-column-gap: 1em; 
+				-moz-column-rule: 1px solid darkGray; 
+				-webkit-column-gap: 1em; 
+				-webkit-column-rule: 1px solid darkGray;
+			}
+			
+			div[columns="one"] {
+				-moz-column-count: 1; 
+				-webkit-column-count: 1; 
+			}
+			
+			div[columns="two"] {
+				-moz-column-count: 2; 
+				-webkit-column-count: 2; 
+			}
+			
+			div[columns="three"] {
+				-moz-column-count: 3; 
+				-webkit-column-count: 3; 
+			}
+			
+			div[columns="four"] {
+				-moz-column-count: 4; 
+				-webkit-column-count: 4; 
+			}
+			
+			div[columns="five"] {
+				-moz-column-count: 5; 
+				-webkit-column-count: 5; 
+			}
+			
+			div[columns="six"] {
+				-moz-column-count: 6; 
+				-webkit-column-count: 6; 
+			}
+			
+			div[columns="sevem"] {
+				-moz-column-count: 7; 
+				-webkit-column-count: 7; 
+			}
+			
+			div[columns="eight"] {
+				-moz-column-count: 8; 
+				-webkit-column-count: 8; 
+			}
+			
+			div[columns="nine"] {
+				-moz-column-count: 9; 
+				-webkit-column-count: 9; 
+			}
+			
+			div[columns="ten"] {
+				-moz-column-count: 10; 
+				-webkit-column-count: 10; 
+			}
+			
+			/* Aside elements */
+			
+			aside {
+				float:right;
+				display:block;
+				background-color:rgba(243,243,243,1);
+				border:2px solid lightGray;
+				border-radius:3px;
+				padding:15px;
+				font-size:17px;
+				min-width:150px;
+				min-height:200px;
+				margin:20px;
+			}
+			
+			img.block {
+				display:block;
+				margin-top:20px;
+			}
+			
+			img.inline {
+				display:inline;
+			}
+			
+			/* Fancy animations and other styles for divs, images, asides, etc. */
+			
+			.hover {
+				opacity:0.8;
+			}
+			
+			table.hover {
+				opacity:1;
+			}
+			
+			.hover:hover {
+				opacity:1;
+			}
+			
+			.outline {
+				border:2px solid darkGray;
+			}
+			
+			.bloom {
+				box-shadow:none;
+				-webkit-transition:box-shadow 0.2s linear;
+			}
+			
+			.bloom:hover {
+				box-shadow:0px 0px 5px lightGray;
+			}
+			
+			.roundHover {
+				border-radius:0px;
+				-webkit-transition:border-radius 0.2s linear;
+			}
+			
+			.roundHover:hover {
+				border-radius:3px;
+			}
+			
+			.rounderHover {
+				border-radius:0px;
+				-webkit-transition:border-radius 0.2s linear;
+			}
+			
+			.rounderHover:hover {
+				border-radius:7px;
+			}
+			
+			.roundestHover {
+				border-radius:0px;
+				-webkit-transition:border-radius 0.2s linear;
+			}
+			
+			.roundestHover:hover {
+				border-radius:14px;
+			}
+			
+			/* Border radius for objects */
+			
+			.round {
+				border-radius:3px;
+			}
+			
+			.rounder {
+				border-radius:7px;
+			}
+			
+			.roundest {
+				border-radius:14px;
+			}
+			
+			/* Big Paragraph elements */
+			
+			p.medium {
+				font-size:17px;
+				line-height:25px;
+			}
+			
+			p.large {
+				font-size:21px;
+				line-height:29px;
+			}
+			
+			p.huge {
+				font-size:25px;
+				line-height:33px;
+			}
+			
+			p.gigantic {
+				font-size:29px;
+				line-height:37px;
+			}
+			
+			p.enormous {
+				font-size:33px;
+				line-height:41px;
+			}
+			
+			p.colossal {
+				font-size:37px;
+				line-height:45px;
+			}
+			
+			/* Divs with columns */
+
+			div[columns] {
+				margin-top:20px;
+				-moz-column-gap: 1em; 
+				-moz-column-rule: 1px solid darkGray; 
+				-webkit-column-gap: 1em; 
+				-webkit-column-rule: 1px solid darkGray;
+			}
+			
+			div[columns="one"] {
+				-moz-column-count: 1; 
+				-webkit-column-count: 1; 
+			}
+			
+			div[columns="two"] {
+				-moz-column-count: 2; 
+				-webkit-column-count: 2; 
+			}
+			
+			div[columns="three"] {
+				-moz-column-count: 3; 
+				-webkit-column-count: 3; 
+			}
+			
+			div[columns="four"] {
+				-moz-column-count: 4; 
+				-webkit-column-count: 4; 
+			}
+			
+			div[columns="five"] {
+				-moz-column-count: 5; 
+				-webkit-column-count: 5; 
+			}
+			
+			div[columns="six"] {
+				-moz-column-count: 6; 
+				-webkit-column-count: 6; 
+			}
+			
+			div[columns="sevem"] {
+				-moz-column-count: 7; 
+				-webkit-column-count: 7; 
+			}
+			
+			div[columns="eight"] {
+				-moz-column-count: 8; 
+				-webkit-column-count: 8; 
+			}
+			
+			div[columns="nine"] {
+				-moz-column-count: 9; 
+				-webkit-column-count: 9; 
+			}
+			
+			div[columns="ten"] {
+				-moz-column-count: 10; 
+				-webkit-column-count: 10; 
+			}
+			
+			/* Navigation */
+			
+			nav.demoNav {
+				display:block;
+			}
+			
+			nav.demoNav ul {  
+			    list-style: none;  
+			    overflow: hidden;  
+			} 
+			
+			nav.demoNav ul li {
+				float: left;
+				height: 35px;
+			}
+			
+			nav.demoNav ul li a:link, nav.demoNav ul li a:visited {
+				text-decoration: none;
+				display: block;
+				height: 40px;
+				color: #fff;
+				border:none;
+				padding-left:8px;
+				padding-right:8px;
+				padding-top:7px;
+				font-size: 15px;
+				font-weight:normal;
+				margin:3px;
+				background: #bcbcbc; 
+				-webkit-transition:background 0.2s; 
+			}
+			
+			nav.demoNav ul li a:hover {  
+			    background: DarkGray;  
+			    color: #fff;  
+			} 
+			
+			nav.demoNav[blue] ul li a:link, nav.demoNav[blue] ul li a:visited {
+				text-decoration: none;
+				display: block;
+				height: 40px;
+				color: #fff;
+				border:none;
+				padding-left:8px;
+				padding-right:8px;
+				padding-top:7px;
+				font-size: 15px;
+				font-weight:normal;
+				margin:3px;
+				background:#0090d2; 
+				-webkit-transition:background 0.2s; 
+			}
+			
+			nav.demoNav[blue] ul li a:hover {  
+			    background: #007db8;  
+			    color: #fff;  
+			} 
+			
+			nav.demoNav[green] ul li a:link, nav.demoNav[green] ul li a:visited {
+				text-decoration: none;
+				display: block;
+				height: 40px;
+				color: #fff;
+				border:none;
+				padding-left:8px;
+				padding-right:8px;
+				padding-top:7px;
+				font-size: 15px;
+				font-weight:normal;
+				margin:3px;
+				background:#99CC00; 
+				-webkit-transition:background 0.2s; 
+			}
+			
+			nav.demoNav[green] ul li a:hover {  
+			    background: #669900;  
+			    color: #fff;  
+			} 
+			
+			nav.demoNav[orange] ul li a:link, nav.demoNav[orange] ul li a:visited {
+				text-decoration: none;
+				display: block;
+				height: 40px;
+				color: #fff;
+				border:none;
+				padding-left:8px;
+				padding-right:8px;
+				padding-top:7px;
+				font-size: 15px;
+				font-weight:normal;
+				margin:3px;
+				background:#FFBB33; 
+				-webkit-transition:background 0.2s; 
+			}
+			
+			nav.demoNav[orange] ul li a:hover {  
+			    background: #FF8800;  
+			    color: #fff;  
+			} 
+			
+			nav.demoNav[red] ul li a:link, nav.demoNav[red] ul li a:visited {
+				text-decoration: none;
+				display: block;
+				height: 40px;
+				color: #fff;
+				border:none;
+				padding-left:8px;
+				padding-right:8px;
+				padding-top:7px;
+				font-size: 15px;
+				font-weight:normal;
+				margin:3px;
+				background:#FF4444; 
+				-webkit-transition:background 0.2s; 
+			}
+			
+			nav.demoNav[red] ul li a:hover {  
+			    background:#CC0000;  
+			    color: #fff;  
+			} 
+
+	</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26715464-1']);
+  _gaq.push(['_setDomainName', 'jujubeweb.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+		<div onclick="select_text()" style="position:absolute;top:10px;right:10px;">
+			<img alt="Permalink" src="http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/link.png" height="12" style="vertical-align:middle; opacity:0.6;"> <input id="short_url" onclick="select_text()" readonly type="text" value="is.gd/bamboodocs" style="font-size:11px;border:none;background-color:#E6E6E6">
+		</div>
+		<nav id="mainNav">
+			<h2>Navigation</h2>
+			<ul>
+				<a class="selected" href="#FirstSteps"><li>First Steps</li></a>
+				<a href="#GettingFancy"><li>Getting Fancy</li></a>
+				<a href="#AddingPageElements"><li>Adding Page Elements</li></a>
+					<a href="#SearchBars"><li class="subLine">Search Bars</li></a>
+					<a href="#Inputs"><li class="subLine">Inputs</li></a>
+					<a href="#Textareas"><li class="subLine">Textareas</li></a>
+					<a href="#Blockquotes"><li class="subLine">Blockquotes</li></a>
+					<a href="#Tables"><li class="subLine">Tables</li></a>
+					<a href="#Buttons"><li class="subLine">Buttons</li></a>
+					<a href="#Images"><li class="subLine">Images</li></a>
+					<a href="#StandoutElements"><li class="subLine">Standout Elements</li></a>
+					<a href="#ProgressBars"><li class="subLine">Progress Bars</li></a>
+					<a href="#Asides"><li class="subLine">Asides</li></a>
+					<a href="#NavigationBars"><li class="subLine">Navigation</li></a>
+					<a href="#Carousels"><li class="subLine">Carousels</li></a>
+					<a href="#Links"><li class="subLine">Links</li></a>
+					<a href="#Links"><li class="subLine">Lists</li></a>
+					<a href="#CodeSnippets"><li class="subLine">Code Snippets</li></a>
+					<a href="#Columns"><li class="subLine">Columns</li></a>
+					<a href="#Tooltips"><li class="subLine">Tooltips</li></a>
+					<a href="#Demo"><li class="demo">See a demo!</li></a>
+					<a href="#SupportBamboo"><li class="support">Support Bamboo!</li></a>
+					<!--<a><li class="subLine" id="comingsoon">More Elements Coming Soon</li></a>-->					
+					<!--<a href="#Dropdowns"><li class="subLine">Dropdowns</li></a>-->
+
+			</ul>
+		</nav>
+		<header>
+			<a href="http://jujubeweb.com/bamboo/">Bamboo / </a>Docs
+		</header>
+		<img alt="Bamboo" id="logo" src="bamboo_logo.png">
+		<article id="first">
+			<p id="overview">Getting started with Bamboo is easy - you don't even have to be a web developer! Read through the comprehensive documentation below and you'll soon be a Bamboo expert. <br><em style="font-size:12pt;text-align:right;">Have an issue or problem that isn't explained below? <a href="mailto:support@bamboo.jujubeweb.com?subject=Issue/Problem with Bamboo Framework&body=Please explain your problem and we'll get in touch with you as soon as we can.">Tell us.</a></em></p>
+		</article>
+		<article id="second">
+			<h2 id="FirstSteps"><span class="h2content">First Steps</span></h2>
+			<p>To start using Bamboo, copy the code snippet below and paste it right before the closing <code>&#60;/head&#62;</code>.</p>
+			<code>&#60;link rel="stylesheet" href="http://is.gd/bamboocss"&#62;&#60;script type="text/javascript" src="http://is.gd/bamboojs"&#62;&#60;/script&#62;</code>
+			<p class="afterPre">Here's how it looks when you put it into a blank HTML5 document:</p>
+			<pre class="funky">
+&#60;DOCTYPE html&#62;
+&#60;html&#62;
+&#60;head&#62;
+<span>&#60;link rel="stylesheet" href="http://is.gd/bamboocss"&#62;</span>
+<span>&#60;script type="text/javascript" src="http://is.gd/bamboojs"&#62;&#60;/script&#62;</span>
+&#60;/head&#62;
+&#60;body&#62;
+&#60;/body&#62;
+&#60;/html&#62;
+</pre>
+		</article>
+		<article>
+			<h2 id="GettingFancy" class="notFirst"><span class="h2content">Getting Fancy</span> <a href="#" class="back-to-top">Back to Top</a></h2>
+			<p>Once you've pasted the Bamboo snippet into your website, you need to set it up so everything looks good. Here's how you do it.</p>
+			<p>Start by setting up your page so that Bamboo recognizes it and styles it just right. If you've already copied and pasted the blank template above, you just need to add a few things. First, add a <code>&#60;div class="wrapper"&#62;&#60;/div&#62;</code> and a <code>&#60;div class="main"&#62;&#60;/div&#62;</code> so your page looks like this:</p>
+<pre class="funky">
+&#60;DOCTYPE html&#62;
+&#60;html&#62;
+&#60;head&#62;
+&#60;link rel="stylesheet" href="http://is.gd/bamboocss"&#62;
+&#60;script type="text/javascript" src="http://is.gd/bamboojs"&#62;&#60;/script&#62;
+&#60;/head&#62;
+&#60;body&#62;
+<span>&#60;header&#62;</span>
+<span>&#60;/header&#62;</span>
+<span>&#60;nav&#62;</span>
+<span>&#60;ul&#62;</span>
+<span>&#60;li&#62;&#60;a href="#"&#62;Home&#60;/a&#62;&#60;/li&#62;</span>
+<span>&#60;li&#62;&#60;a href="about.html"&#62;About&#60;/a&#62;&#60;/li&#62;</span>
+<span>&#60;li&#62;&#60;a href="new.html"&#62;News&#60;/a&#62;&#60;/li&#62;</span>
+<span>&#60;li&#62;&#60;a href="contact.html"&#62;Contact Us&#60;/a&#62;&#60;/li&#62;</span>
+<span>&#60;/ul&#62;</span>
+<span>&#60;/nav&#62;</span>
+<span>&#60;div class="main"&#62;</span>
+<span>This is where the main content goes.</span>
+<span>&#60;/div&#62;</span>
+&#60;/body&#62;
+&#60;/html&#62;
+</pre>
+		</article>	
+		<article>
+			<h2 id="AddingPageElements" class="notFirst"><span class="h2content">Adding Page Elements</span> <a href="#" class="back-to-top">Back to Top</a></h2>
+			<p>Now that you've built a basic Bamboo web page, you need to add some important page elements, like a search bar, inputs, textareas, blockquotes, tables, buttons, and images.</p>
+			
+				<h3 class="lowHeader" id="SearchBars">Search Bars <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">It's really easy to make a search bar look like the one below.</p> 
+				<p class="exHolder"><input type="search" placeholder="Search"></p>
+				<p class="underLine">Just copy and paste this line of code into your website: </p>
+				<p class="codeHolder"><code>&#60;input type="search" placeholder="Search"&#62;</code></p>
+				<p>You can also change around some of the attributes to change the outline color from the default <code>blue</code> to <code>lightBlue</code>, <code>red</code>, <code>lightRed</code>, <code>green</code>, <code>lightGreen</code>, <code>orange</code>, or <code>lightOrange</code>. Here's how it works.</p>
+				<img src="howtosearch.png" alt="You can easily change around the color of the input focus by just adding a red, lightRed, orange, lightOrange, green, lightGreen, blue, or lightBlue.">
+				
+				<h3 class="lowHeader" id="Inputs">Inputs <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Inputs are one-line text fields for users to enter data into. They are commonly used for usernames and passwords and are key elements for any website, so it's important to know how to use them. Bamboo input tags are the same as search tags, except you don't put the <code>type="search"</code>. Customizing the color on an input is just as easy as customizing a search bar (you just choose one of the eight possible color choices). Here's how one looks:</p> 
+				<p class="exHolder"><input placeholder="Simple input"></p>
+				
+				<h3 class="lowHeader" id="Textareas">Textareas <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Textareas are great when users need to enter in several sentences, and Bamboo textareas automatically expand. You can customize a textarea's outline color just like an input or search bar.</p> 
+				<p class="exHolder"><textarea style="margin-top:3px;" placeholder="Type lots of text and I will expand!" red></textarea><p>
+				<p class="underLine">Just paste the code below for a textarea: </p>
+				<p class="codeHolder"><code>&#60;textarea placeholder="Type on me!"&#62;&#60;/textarea&#62;</code></p>
+				
+				<h3 class="lowHeader" id="Blockquotes">Blockquotes <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Blockquotes are used to show a quote on your website. They're very simple to add but can't be customized (yet!).</p> 
+				<p class="exHolder"><blockquote style="margin-top:0px;">Notice that the stiffest tree is most easily cracked, while the bamboo or willow survives by bending with the wind. - Bruce Lee</blockquote></p>
+				<p class="underLine">Just paste the code below for a blockquote: </p>
+				<p class="codeHolder"><code>&#60;blockquote&#62;The world is a wonderful place. - Eeyore&#60;/blockquote&#62;</code></p>
+				
+				<h3 class="lowHeader" id="Tables">Tables <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Tables can be used to store data in a modular format. Here's a simple one.</p> 
+				<table>
+					<tbody>
+					    <tr class="title">
+					      <th>Month</th>
+					      <th>Savings</th>
+					    </tr>
+					    <tr>
+					      <td>January</td>
+					      <td>$100</td>
+					    </tr>
+					    <tr>
+					      <td>February
+					      </td><td>$110
+					    </td></tr>
+					    <tr>
+					      <td>March</td>
+					      <td>$120</td>
+					    </tr>
+					    <tr>
+					      <td>April
+					      </td><td>$130
+					    </td></tr>
+					    <tr>
+					      <td>May</td>
+					      <td>$140</td>
+					    </tr>
+				    	</tbody>
+				  </table>
+				<p style="margin-top:15px">Here's a table with rows that change opacity when you hover over them. You can add this feature by simply adding <code>class="hover"</code> to your opening <code>&#60;table&#62;</code> tag. Notice the gradual hover effect - this can be configured with <code>class="hover gradual"</code></p> 
+				<table class="hover gradual">
+					<tbody>
+					    <tr class="title">
+					      <th>Month</th>
+					      <th>Savings</th>
+					    </tr>
+					    <tr>
+					      <td>January</td>
+					      <td>$100</td>
+					    </tr>
+					    <tr>
+					      <td>February
+					      </td><td>$110
+					    </td></tr>
+					    <tr>
+					      <td>March</td>
+					      <td>$120</td>
+					    </tr>
+					    <tr>
+					      <td>April
+					      </td><td>$130
+					    </td></tr>
+					    <tr>
+					      <td>May</td>
+					      <td>$140</td>
+					    </tr>
+				    	</tbody>
+				  </table>
+				  <p>Here's what you need to paste to create a table:</p>
+
+<pre>
+&lt;table class=&quot;hover&quot;&gt;
+	&lt;tbody&gt;
+	    &lt;tr class=&quot;title&quot;&gt;
+	      &lt;th&gt;Month&lt;/th&gt;
+	      &lt;th&gt;Savings&lt;/th&gt;
+	    &lt;/tr&gt;
+	    &lt;tr&gt;
+	      &lt;td&gt;January&lt;/td&gt;
+	      &lt;td&gt;$100&lt;/td&gt;
+	    &lt;/tr&gt;
+	    &lt;tr&gt;
+	      &lt;td&gt;February
+	      &lt;/td&gt;&lt;td&gt;$110
+	    &lt;/td&gt;&lt;/tr&gt;
+	    &lt;tr&gt;
+	      &lt;td&gt;March&lt;/td&gt;
+	      &lt;td&gt;$120&lt;/td&gt;
+	    &lt;/tr&gt;
+	    &lt;tr&gt;
+	      &lt;td&gt;April
+	      &lt;/td&gt;&lt;td&gt;$130
+	    &lt;/td&gt;&lt;/tr&gt;
+	    &lt;tr&gt;
+	      &lt;td&gt;May&lt;/td&gt;
+	      &lt;td&gt;$140&lt;/td&gt;
+	    &lt;/tr&gt;
+    &lt;/tbody&gt;
+ &lt;/table&gt;
+</pre>
+				  
+				<h3 class="lowHeader" id="Buttons">Buttons <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Buttons are essential elements for any website. They can be used to link to other pages, trigger popups, or submit forms. To create a button, use <code>&#60;button&#62;Button&#60;/button&#62;</code>. Here's how that button would look:</p> 
+				<button>Button</button>
+				<p>If you need a button to submit a form, then you are looking for a submit button, which is coded differently but looks the same. Here's the code for a submit button: <code>&#60;input type="submit"&#62;</code></p> 
+				
+				<h3 class="lowHeader" id="Images">Images <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">If you know some basic HTML, then you've probably worked with images before. Adding an image with Bamboo is as simple as <code>&#60;img alt="Example Image" src="example.png"&#62;</code>. Here's an image with most of the possible class styles, which can be done with <code>class="block bloom outline hover roundestHover"</code></p> 
+				<img alt="Placeholder Image" style="margin-top:10px;" src="http://placehold.it/100x100" class="block bloom outline hover roundestHover" height="100">			<p>Below are the different classes that can be applied to an image:</p> 
+					<h4><code>block</code> (optional)</h4>
+					<p class="underLine">Positions the image on its own line, as opposed to the default inline styling.</p> 					
+					<h4><code>bloom</code> (optional)</h4>
+					<p class="underLine">Adds some shadow around the image on user hover.</p> 																		
+					<h4><code>outline</code> (optional)</h4>
+					<p class="underLine">Adds a 2px outline around the image.</p> 				
+					<h4><code>hover</code> (optional)</h4>
+					<p class="underLine">Increases the opacity of the image when the user hovers over it.</p> 
+					<h4><code>roundHover</code> (optional)</h4>
+					<p class="underLine">Slightly rounds the edges of the image on user hover.</p> 	
+					<h4><code>rounderHover</code> (optional)</h4>
+					<p class="underLine">Rounds the edges a little more than <code>roundHover</code>.</p>
+					<h4><code>roundestHover</code> (optional)</h4>
+					<p class="underLine">Rounds the edges a little more than <code>rounderHover</code>.</p> 	
+				<h3 class="lowHeader" id="StandoutElements">Standout Elements <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Standout elements are great for highlighting something on the page so it stands out from the rest of the content. You can do this by enclosing that content inside a <code>&#60;div class="big"&#62;&#60;/div&#62;</code>. Here's an example of a standout element on a web page:</p> 
+				<img style="margin-top:10px;" alt="Standout elments" src="capture.png" width="500" class="outline">
+					
+				<h3 class="lowHeader" id="Columns">Columns <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Whether you're styling an online newspaper or designing the layout for a website, columns are essential. To add columns to a <code>&#60;div&#62;</code>, you just need to add <code>columns="<i>number of columns</i>"</code> to the tag, like this:</p>
+				<code>&#60;div columns="three"&#62;Lorem ipsum...&#60;div&#62;</code>
+				<p class="exHolder">Here's an example of a three-columned layout:</p>
+				<div columns="three">
+					Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.	Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.	
+				</div>
+				
+				<h3 class="lowHeader" id="ProgressBars">Progress Bars <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Progress bars are useful for showing the completion of a task, such as the loading of a website. Progress bars are one of the more complicated Bamboo elements to add to your website. Here's how you make a simple one:</p>
+				<code>&#60;div class="meter"&#62;&#60;span style="width: 70%"&#62;&#60;/span&#62;&#60;/div&#62;</code>
+				<p class="exHolder">Animated progress bars are a little more difficult - here's how you make one:</p>
+				<code>&#60;div class="meter animate"&#62;&#60;span style="width: 70%"&#62;&#60;span&#62;&#60;/span&#62;&#60;/span&#62;&#60;/div&#62;</code>
+				<p class="exHolder">Here's an example of a simple progress bar and an animated one:</p>
+				<div class="meter">
+					<span style="width: 30%"></span>
+				</div> <br>
+				<div class="meter animate">
+					<span style="width: 70%"><span></span></span>
+				</div>  
+					
+				<h3 class="lowHeader" id="StandoutElements">Standout Elements <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Standout elements are great for highlighting something on the page so it stands out from the rest of the content. You can do this by enclosing that content inside a <code>&#60;div class="big"&#62;&#60;/div&#62;</code>. Here's an example of a standout element on a web page:</p> 
+				<img style="margin-top:10px;" alt="Standout elements" src="capture.png" width="500" class="outline">
+					
+				<h3 class="lowHeader" id="Asides">Asides <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Asides are used to show content that is aside from the main page. Bamboo asides have a bit of border and box-shadow and side on the right of the web page like a sidebar. You can make an aside by simple coding <code>&#60;aside&#62;Lorem Ipsum...&#60;/aside&#62;</code>. Here's an example of an aside on a web page:</p> 
+				<img style="margin-top:10px;" alt="Aside" src="asidecapture.png" width="500" class="outline">
+					
+				<h3 class="lowHeader" id="NavigationBars">Navigation <a href="#" class="back-to-top">Back to Top</a></h3>
+				<p class="underLine">Navigation is an essential element of any web page because it allows the visitor to move between pages on the website. Creating a nav bar is a little complicated, however. Here's how you do it:</p>
+<pre>
+&#60;nav&#62;
+	&#60;ul&#62;
+		&#60;li&#62;Home&#60;/li&#62;
+		&#60;li&#62;About&#60;/li&#62;
+		&#60;li&#62;News&#60;/li&#62;
+		&#60;li&#62;Contact&#60;/li&#62;
+	&#60;/ul&#62;
+&#60;/nav&#62;
+</pre>
+				<p class="exHolder">...and here's how it looks:</p>
+				<b>Default navigation bar</b>
+				<nav class="demoNav">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">News</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+				<b>Red version <code>&#60;nav class="demoNav" red&#62;</code></b>
+				<nav class="demoNav" red>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">News</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+				<b>Green version <code>&#60;nav class="demoNav" green&#62;</code></b>
+				<nav class="demoNav" green>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">News</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+				<b>Blue version <code>&#60;nav class="demoNav" blue&#62;</code></b>
+				<nav class="demoNav" blue>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">News</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+		</article>
+		<article>
+			<h2 id="Demo" class="notFirst"><span class="h2content">Demo</span> <a href="#" class="back-to-top">Back to Top</a></h2>
+			<p>Below is a demo of all Bamboo's components working together on a sample website. This is commonly called a <code>kitchen sink</code>. Click <a href="http://is.gd/kitchensink">here</a> to open the kitchen sink on a separate page.</p>
+			<iframe src="http://jujubeweb.com/bamboo/components.html" frameborder="none" style="border:2px solid DarkGray;border-radius:3px;width:100%;" height="400">Your browser doesn't support iframes.</iframe>
+		</article>	
+		<article>
+			<h2 id="SupportBamboo" class="notFirst"><span class="h2content">Show your support!</span> <a href="#" class="back-to-top">Back to Top</a></h2>
+			<p>If you've enjoyed working with Bamboo and your website has benefited from our code, embed one of the badges below to show your support.</p>
+			<h4>Portrait Badge</h4>
+			<!-- Bamboo Badge --><link rel="stylesheet" href="http://is.gd/bamboobdg"><div class="bamboo_bdg_portrait" onclick="window.open('http://is.gd/buildbamboo')"></div>
+			<code>&lt;!-- Bamboo Badge --&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;http://is.gd/bamboobdg&quot;&gt;&lt;div class=&quot;bamboo_bdg_portrait&quot; onclick=&quot;window.open('http://is.gd/buildbamboo')&quot;&gt;&lt;/div&gt;</code>
+			<h4>Landscape Badge</h4>
+			<!-- Bamboo Badge --><link rel="stylesheet" href="http://is.gd/bamboobdg"><div class="bamboo_bdg_landscape" onclick="window.open('http://is.gd/buildbamboo')"></div>		
+			<code>&lt;!-- Bamboo Badge --&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;http://is.gd/bamboobdg&quot;&gt;&lt;div class=&quot;bamboo_bdg_landscape&quot; onclick=&quot;window.open('http://is.gd/buildbamboo')&quot;&gt;&lt;/div&gt;</code>			
+		</article>	
+		<script src="http://is.gd/bamboojs"></script>
+		<script>
+			function select_text()
+			{
+				var urlbox = document.getElementById("short_url");
+				if(urlbox)
+				{
+					urlbox.focus();
+					urlbox.select();
+				}
+			}
+			
+		</script>
+</body>
+</html>
